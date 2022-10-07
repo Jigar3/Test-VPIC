@@ -10,3 +10,9 @@ def get_vin_record(vin):
         if r['VariableId'] == 26:
             retval = r['Value']
     return retval
+
+def random_api():
+    resp = requests.get("https://jsonplaceholder.typicode.com/todos/1")
+    data = json.loads(resp.text)
+
+    return data["userId"]
